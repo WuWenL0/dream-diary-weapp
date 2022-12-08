@@ -44,7 +44,6 @@
 <script setup lang="ts">
 // import { ref,reactive } from "vue"
 import { useDateFormat } from '@vueuse/core'
-console.log(useDateFormat('2022/12/08 09:52:59', 'YYYY-MM-DD HH:mm:ss dddd').value);
 
 withDefaults(defineProps<{
   date?: string,

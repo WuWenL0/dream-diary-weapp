@@ -3,7 +3,7 @@ export default defineAppConfig({
     'pages/index/index'
   ],
   window: {
-    backgroundColor: '#f0f2f5',
+    backgroundColor: '#f7f8fa',
     backgroundTextStyle: 'light',
     navigationStyle: 'custom'
   }
