@@ -9,26 +9,24 @@
     </template>
   </Navigation>
   <view class="cloud">
-    <view class="cloud-content">
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-    </view>
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
+    <MessageCard />
   </view>
 </template>
 
@@ -47,8 +45,6 @@ const changeTabList = (tab: any) => {
 <style lang="less">
 @import '../app.less';
 .cloud {
-  &-content {
-    padding: @contentPadding;
-  }
+  padding: @contentPadding;
 }
 </style>

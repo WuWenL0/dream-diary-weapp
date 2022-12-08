@@ -36,7 +36,7 @@ import { bottomLift } from "../../utils/system-Info";
 
 
 // 导航栏处理逻辑
-const activeIndex = ref<number>(1);
+const activeIndex = ref<number>(0);
 const handleNavigation = (index: number) => {
   activeIndex.value = index
 }

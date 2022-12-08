@@ -60,6 +60,7 @@ withDefaults(defineProps<{
   flex-direction: column;
   border: 1px solid @borderColor;
   border-radius: @ContentRadius;
+  background-color: @contentBgColor;
   margin-bottom: 20rpx;
 
   .card-top {

@@ -3,11 +3,8 @@ export default defineAppConfig({
     'pages/index/index'
   ],
   window: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f0f2f5',
     backgroundTextStyle: 'light',
-    // navigationBarBackgroundColor: '#fff',
-    // navigationBarTitleText: 'WeChat',
-    // navigationBarTextStyle: 'black'
     navigationStyle: 'custom'
   }
 })

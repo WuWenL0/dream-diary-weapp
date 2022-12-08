@@ -5,16 +5,27 @@
     </template>
   </Navigation>
   <view class="diary">
-    diary
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
+    <DiaryCard></DiaryCard>
   </view>
 </template>
 
 <script setup lang="ts">
 import Navigation from './layout/Navigation.vue';
+import DiaryCard from './card/DiaryCard.vue';
 
 // import { ref,reactive } from "vue"
 </script>
 
 <style lang="less">
-
+@import '../app.less';
+.diary {
+  padding: @contentPadding;
+}
 </style>
