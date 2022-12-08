@@ -13,10 +13,10 @@
           </view>
           <view class="hitokoto" v-if="hitokoto.hitokoto">
             <view class="hitokoto-content">
-              {{hitokoto.hitokoto}}
+              {{ hitokoto.hitokoto }}
             </view>
             <view class="hitokoto-from">
-              ­­­­—{{hitokoto.fromWho}}「{{hitokoto.from}}」
+              ­­­­—{{ hitokoto.fromWho }}「{{ hitokoto.from }}」
             </view>
           </view>
         </view>
@@ -44,8 +44,24 @@
     </nut-row>
   </view>
   <view class="diary-body">
-    <DiaryCard></DiaryCard>
-    <DiaryCard :status="1"></DiaryCard>
+    <scroll-view class="scroll-view" :scroll-y="true" @scrolltoupper="upper" @scrolltolower="lower" @scroll="scroll">
+      <DiaryCard></DiaryCard>
+      <DiaryCard :status="1"></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+      <DiaryCard></DiaryCard>
+    </scroll-view>
   </view>
 </template>
 
@@ -55,14 +71,17 @@ import DiaryCard from './card/DiaryCard.vue';
 import { useDateFormat, useNow } from '@vueuse/core';
 import { reactive, ref } from 'vue';
 import Taro from '@tarojs/taro';
+import { systemInfo } from '../utils/system-Info';
+
 
 const nowDate = ref(useDateFormat(useNow(), "A"))
 
+
 // 一言
 type hitokoto = {
-  hitokoto?:string,
-  from?:string,
-  fromWho?:string,
+  hitokoto?: string,
+  from?: string,
+  fromWho?: string,
 }
 const hitokoto = reactive<hitokoto>({})
 const getHitokoto = () => {
@@ -84,6 +103,20 @@ const getHitokoto = () => {
 }
 getHitokoto()
 
+// 滑动相关
+const screenHeight:string = systemInfo.screenHeight + 'px'  // 屏幕总高度
+const statusBarHeight:string = systemInfo.statusBarHeight + 'px' // 状态栏高度
+const navBarHeight:string = '46px' // 头部导航栏高度
+const panelHeight:string = '250rpx'  // 面板高度
+const upper = (e) => {
+  console.log('upper:', e)
+}
+const lower = (e) => {
+  console.log('lower:', e)
+}
+const scroll = (e) => {
+  console.log('scroll:', e)
+}
 
 </script>
 
@@ -107,16 +140,18 @@ getHitokoto()
       font-size: 50rpx;
     }
 
-    .hitokoto{
+    .hitokoto {
       display: flex;
       flex-direction: column;
       font-size: 30rpx;
       margin-top: 10rpx;
       flex: 1;
-      &-content{
+
+      &-content {
         flex: 1;
       }
-      &-from{
+
+      &-from {
         display: flex;
         justify-content: flex-end;
         font-size: 25rpx;
@@ -161,5 +196,9 @@ getHitokoto()
 
 .diary-body {
   padding: @contentPadding;
+
+  .scroll-view {
+    height: calc(v-bind(screenHeight) - v-bind(statusBarHeight) - v-bind(navBarHeight) - v-bind(panelHeight));
+  }
 }
 </style>

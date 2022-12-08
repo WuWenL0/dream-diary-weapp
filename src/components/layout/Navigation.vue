@@ -33,7 +33,7 @@ defineProps<{
   title?: string
 }>()
 
-const statusBarHeight = systemInfo.statusBarHeight + 'px';
+const statusBarHeight:string = systemInfo.statusBarHeight + 'px';
 
 </script>
 

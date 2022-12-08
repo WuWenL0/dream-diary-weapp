@@ -1,11 +1,11 @@
 <template>
   <view class="app-content">
     <!-- 页面 -->
-    <Diary v-if="(activeIndex === 0)"></Diary>
-    <Cloud v-if="(activeIndex === 1)"></Cloud>
-    <My v-if="(activeIndex === 2)"></My>
-    <!-- 占位 -->
-    <view class="placeholder"></view>
+    <view class="content-body">
+      <Diary v-if="(activeIndex === 0)"></Diary>
+      <Cloud v-if="(activeIndex === 1)"></Cloud>
+      <My v-if="(activeIndex === 2)"></My>
+    </view>
     <!-- 导航 -->
     <view class="tab-bar" :style="{ marginBottom: bottomLift + 'px' }">
       <view class="tab-bar-item" @tap="handleNavigation(0)">
@@ -45,10 +45,6 @@ const handleNavigation = (index: number) => {
 
 <style lang="less">
 @import '../../app.less';
-.placeholder{
-  display: block;
-  height: 200rpx;
-}
 .tab-bar {
   width: 80%;
   height: 140rpx;
